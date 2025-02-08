@@ -1,5 +1,5 @@
 //your JS code here. If required.
-document.getElementById("ip").addEventListner("click", function(){
+document.getElementById("ip").addEventListener("click", function(){
 	const outputDiv = document.getElementById("output");
 	let num = parseFloat(document.getElementById("ip").value);
 	if(isNaN(num)){
@@ -7,7 +7,7 @@ document.getElementById("ip").addEventListner("click", function(){
 		return;
 	}
 	new Promise((resolve => {
-	setTimeOut(() => {
+	setTimeout(() => {
 		outputDiv.textContent = `Result: ${num}`
 		resolve(num);
 	})
@@ -22,19 +22,19 @@ document.getElementById("ip").addEventListner("click", function(){
 	.then(result => new Promise(resolve => {
 			setTimeout(() => {
 				result -= 3;
-				outputDiv.tectContent = `Result: ${result}`;
+				outputDiv.textContent = `Result: ${result}`;
 				resolve(result);
 			}, 1000);
 	}))
 		.then(result  => new Promise(resolve => {
-				setTimeOut(() => {
+				setTimeout(() => {
 					result /= 2;
 					outputDiv.textContent =`Result: ${result}`;
 					resolve(result);
 				}, 1000);
 		}))
 		.then(result => new Promise(resolve =>{
-		setTimeOut(()  => {
+		setTimeout(()  => {
 			result += 10;
 			outputdiv.textContent = `Final Result: ${result}`;
 			resolve(result);
